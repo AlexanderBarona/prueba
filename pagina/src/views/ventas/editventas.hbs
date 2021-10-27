@@ -1,0 +1,53 @@
+<div class="col-md-4 mx-auto">
+    <div class="card">
+        <div class="card-header">
+            <h3>Editar Venta</h3>
+        </div>
+        <div class="card-body">
+<form action="/ventas/editventas/{{ventamod._id}}?_method=PUT" method="post">
+    <input type="hidden" name="_method" value="PUT">
+    <div class="formulario">
+        <label for="descripcion" class="formulario__label"><h5>Cliente</h5></label>
+            <div class="form-group">
+            <input type="text" name="descripcion" class="form-control" value="{{ventamod.nombreCliente}}" required>
+            </div>
+    </div>
+    <div class="formulario">
+        <label for="categoria" class="formulario__label"><h5>Documento</h5></label>
+        <div class="form-group">
+        <input type="text" name="identificador" class="form-control" value="{{ventamod.nId}}" required>
+        </div>
+    </div>
+
+    <div class="formulario">
+        <label for="valor" class="formulario__label"><h5>Valor Total</h5></label>
+        <div class="form-group">
+        <input type="number" name="valorTotal" class="form-control" value="{{ventamod.valorTotal}}" required>
+         </div>
+    </div>
+
+    <div class="formulario">
+    <label for="estado" class="formulario__label"><h5>Estado</h5></label> 
+    <div class="form-group">
+    <input type="text" name="estado" class="form-control" value="{{ventamod.state}}" required>
+    </div>
+    </div>
+    <div> 
+        <div class="formulario">
+    <label for="estado" class="formulario__label"><h5>Fecha</h5></label> 
+    <div class="form-group">
+    <input type="text" name="fecha" class="form-control" value="{{ventamod.fecha}}" required>
+    </div>
+    </div>
+        &nbsp;</div>
+
+    <div class="form-group">
+        <button class="btn btn-primary btn-block" type="submit">
+            Actualizar
+        </button>
+    </div>
+
+</form>
+        </div>
+    </div>
+</div>

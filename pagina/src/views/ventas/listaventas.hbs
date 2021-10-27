@@ -1,0 +1,44 @@
+
+<div class="card"> 
+	
+  <div class="card-body"><h1>Gwen -  Listado de Ventas</h1> </div> 
+                 
+                 
+  <div class="form-group" ><a href="/add" class="btn btn-outline-warning btn-sm">Nuevo </a>
+  </div>
+
+
+     <table> 
+    <tr class="bg-warning">
+    <td><h5 class="text-dark">Cliente</h5></td>
+		<td><h5 class="text-dark">Documento- ID </h5></td>
+		<td><h5 class="text-dark">Valor Total</h5></td>
+		<td><h5 class="text-dark">Estado</h5></td>
+		<td><h5 class="text-dark">Fecha</h5></td>
+		<td><h5 class="text-dark">Acciones</h5></td>
+		 </tr>
+{{#each lista}}
+<div class="card">
+    
+     <tr>
+    <td>{{this.nombreCliente}}</td>
+		<td>{{this.nId}}</td>
+		<td>{{this.valorTotal}}</td>
+		<td>{{this.state}}</td>
+		<td>{{this.fecha}}</td>
+		<td><a href="/edit/{{_id}}"> <i class="fas fa-pen"></i></a> <form action="/delete/{{_id}}?_method=DELETE" method="post">
+ <input type="hidden" name="_method" value="PUT"> <button class="btn btn-outline-danger btn-sm" type="submit">Borrar</button>
+ 
+ </form>
+     
+
+</td> 
+ </tr>
+</div>
+ {{else}} 
+<p class="lead">No se encontraron productos</p>
+<a href="/add" class="btn btn-success btn-block">Ingresar Productos </a>
+{{/each}} 
+</table>
+</div>
+    

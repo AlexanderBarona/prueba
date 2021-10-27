@@ -1,0 +1,41 @@
+<div class="card"> 
+	<h1></h1>
+  <div class="card-body"><h1>Gwen -  Listado de Usuarios</h1> </div> 
+                 
+                 
+  <div class="form-group" ><a href="/adduser" class="btn btn-outline-warning btn-sm">Nuevo </a>
+  </div>
+
+
+     <table> 
+    <tr class="bg-warning">
+    <td><h5 class="text-dark">Nombre</h5></td>
+		<td><h5 class="text-dark">Email </h5></td>
+		<td><h5 class="text-dark">Rol</h5></td>
+		<td><h5 class="text-dark">Estado</h5></td>
+		<td><h5 class="text-dark">Acciones</h5></td>
+	
+		 </tr>
+{{#each listausr}}
+<div class="card">
+         <tr>
+    <td>{{this.nombre}}</td>
+		<td>{{this.email}}</td>
+		<td>{{this.rol}}</td>
+		<td>{{this.estado}}</td>
+		<td><a href="/edituser/{{this._id}}"> <i class="fas fa-pen"></i></a> <form action="/deluser/{{_id}}?_method=DELETE" method="post">
+ <input type="hidden" name="_method" value="PUT"> <button class="btn btn-outline-danger btn-sm" type="submit">Borrar</button>
+ 
+ </form>
+     
+
+</td> 
+ </tr>
+</div>
+ {{else}} 
+<p class="lead">No se encontraron Usuarios</p>
+<a href="/adduser" class="btn btn-success btn-block">Ingresar Usuarios </a>
+{{/each}} 
+</table>
+</div>
+    
